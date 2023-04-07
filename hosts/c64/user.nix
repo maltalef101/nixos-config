@@ -16,6 +16,7 @@
     zellij.enable = true;
 
     packages.enable = true;
+    startx.enable = true;
     xdg.enable = true;
   };
 }
