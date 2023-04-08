@@ -1,8 +1,7 @@
 { pkgs, lib, config, ... }:
 
 with lib;
-let cfg = 
-  config.modules.packages;
+let cfg = config.modules.packages;
 
 in {
   options.modules.packages = { enable = mkEnableOption "packages"; };
