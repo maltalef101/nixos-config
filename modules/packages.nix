@@ -9,7 +9,7 @@ in {
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       ripgrep ffmpeg exa gnupg bat skim nsxiv mpv pass gnupg unzip 7zip
-      tar slop maim polybar nvtop
+      slop maim polybar nvtop
     ];
   };
 }
