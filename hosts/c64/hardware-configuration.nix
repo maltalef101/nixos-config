@@ -19,7 +19,7 @@
 
     fileSystems."/boot/efi" = { 
         device = "/dev/disk/by-label/efi";
-        fsType = "vfat";
+        fsType = "fat32";
     };
 
     swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
