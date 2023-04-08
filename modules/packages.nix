@@ -16,12 +16,9 @@ in {
       nsxiv
       mpv
       pass
-      gnupg
       unzip
-      7zip
       maim
       polybar 
-      nvtop
     ];
   };
 }

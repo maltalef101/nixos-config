@@ -15,6 +15,7 @@
       system = "x86_64-linux";
       pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
       lib = nixpkgs.lib;
+      config = config;
 
       # This lets us reuse the code to "create" a system
       # Credits go to sioodmy on this one!
@@ -32,7 +33,7 @@
                 useUserPackages = true;
                 useGlobalPkgs = true;
                 extraSpecialArgs = { inherit inputs; };
-                users.maltalef = (./. + "/hosts/${hostname}/user.nix");
+                users.maltalef = ( import (./. + "/hosts/${hostname}/user.nix") { inherit inputs lib config; });
               };
             }
           ];
