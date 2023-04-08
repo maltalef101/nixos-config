@@ -1,3 +1,0 @@
-#! /bin/sh
-
-scrcpy --disable-screensaver -w --window-width 432 --window-height 768 --shortcut-mod "lalt" --window-title "cellphone"
