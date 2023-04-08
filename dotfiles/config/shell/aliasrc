@@ -1,0 +1,63 @@
+#!/bin/sh
+
+# Use neovim for vim if present.
+[ -x "$(command -v nvim)" ] && alias vim="nvim" vimdiff="nvim -d" vi="nvim"
+
+# Verbosity and settings that you pretty much just always are going to want.
+alias \
+	cp="cp -v" \
+	mv="mv -v" \
+	mkd="mkdir -pv" \
+	ffmpeg="ffmpeg -hide_banner"
+
+# Colorize commands when possible.
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	la="ls -a --color=auto --group-directories-first" \
+	ll="ls -la --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+    fgrep="fgrep --color=auto" \
+    egrep="egrep --color=auto" \
+    dir="dir --color=auto" \
+    vdir="vdir --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi"
+
+# These common commands are just too long! Abbreviate them.
+alias \
+	ka="killall" \
+	trem="transmission-remote" \
+	sdn="sudo shutdown -h now" \
+	f="$FILE" \
+	e="$EDITOR" \
+	v="$EDITOR" \
+	z="zathura" \
+    o="fileopen" \
+    abook="abook -C ~/.config/abook/abookrc --datafile ~/.local/share/abook/addressbook; rmdir ~/.abook" \
+	yta="youtube-dl -x -f bestaudio/best" \
+	ytdl="youtube-dl" \
+	scim="sc-im" \
+
+
+# pacman/yay aliases
+alias \
+	p="sudo pacman" \
+    syu="popupgrade" \
+
+# Git aliases:
+alias \
+    g="git" \
+    gst="git status" \
+    gcl="git clone" \
+    gpl="git pull" \
+    gps="git push" \
+    ga="git add" \
+    gdf="git diff" \
+    gc="git commit" \
+    gcm="git commit -m"
+
+
+alias \
+	ref="shortcuts >/dev/null; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/shortcutrc ; source ${XDG_CONFIG_HOME:-$HOME/.config}/shell/zshnameddirrc" \
+	weath="less -S ${XDG_DATA_HOME:-$HOME/.local/share}/weatherreport" \
+	tmux="tmux -f ${XDG_CONFIG_HOME:-$HOME/.config}/tmux/tmux.conf" \
