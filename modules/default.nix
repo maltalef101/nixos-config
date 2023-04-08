@@ -1,23 +1,22 @@
-{ inputs, pkgs, config, ... };
+{ inputs, pkgs, config, ... }:
 
 {
   home.stateVersion = "22.11";
 
   imports = [
-    alacritty
-    bottom
-    dunst
-    firefox
-    git
-    leftwm
-    neovim
-    nushell
-    nvidia
-    rofi
-    zellij
+    ./alacritty.nix
+    ./bottom.nix
+    ./dunst.nix
+    ./firefox.nix
+    ./git.nix
+    ./leftwm.nix
+    ./neovim.nix
+    ./nushell.nix
+    ./rofi.nix
+    ./zellij.nix
 
-    xdg
-    startx
-    packages
+    ./xdg.nix
+    ./startx.nix
+    ./packages.nix
   ];
 }

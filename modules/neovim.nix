@@ -9,7 +9,7 @@ in {
     programs.neovim.enable = true;
     home.packages = with pkgs; [ neovim ]
 
-    home.file.".config/nvim" = {
+    xdg.configFile."nvim" {
       source = ../dotfiles/.config/nvim;
       recursive = true;
     };

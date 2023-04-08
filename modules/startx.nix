@@ -1,13 +1,12 @@
 { pkgs, lib, config, ... }:
 
 with lib;
-let cfg = config.modules.xinit;
+let cfg = config.modules.startx;
 
 in {
-  options.modules.xinig = { enable = mkEnableOption "xinit"; };
+  options.modules.startx = { enable = mkEnableOption "startx"; };
   config = mkIf cfg.enable {
-    services.xserver.displayManager.startx.enable = true;
-    
+    xsession.windowManager.command = "startx";
     home.file.".xinitrc".source = ../dotfiles/.config/x11/xinitrc;
     home.file.".xprofile".source = ../dotfiles/.config/x11/xprofile;
   };

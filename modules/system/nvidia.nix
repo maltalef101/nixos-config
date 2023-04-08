@@ -1,5 +1,5 @@
 # FUCK YOU NVIDIA
-{ config, pkgs, lib, ... }
+{ config, pkgs, lib, ... }:
 
 {
   services.xserver.videoDrivers = ["nvidia"];

@@ -1,7 +1,7 @@
-{ config, lib, inputs, ... };
+{ config, lib, inputs, ... }:
 
 {
-  imports = [ ../../config/default.nix ];
+  imports = [ ../../modules/default.nix ];
   config.modules = {
     alacritty.enable = true;
     bottom.enable = true;
@@ -11,7 +11,6 @@
     leftwm.enable = true;
     neovim.enable = true;
     nushell.enable = true;
-    nvidia.enable = true;
     rofi.enable = true;
     zellij.enable = true;
 

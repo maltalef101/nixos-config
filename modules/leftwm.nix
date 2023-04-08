@@ -6,7 +6,7 @@ let cfg = config.modules.leftwm;
 in {
   options.modules.leftwm = { enable = mkEnableOption "leftwm"; };
   config = mkIf cfg.enable {
-    programs.leftwm.enable = true;
+   home.packages = with pkgs; [ leftwm ];
 
     home.file.".config/leftwm" = {
       source = ../dotfiles/.config/leftwm;
