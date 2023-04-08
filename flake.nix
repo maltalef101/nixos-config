@@ -16,6 +16,7 @@
       pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
       lib = nixpkgs.lib;
       config = config;
+      nvidia = ./modules/system/nvidia.nix;
 
       # This lets us reuse the code to "create" a system
       # Credits go to sioodmy on this one!
@@ -27,6 +28,7 @@
             { networking.hostName = hostname; }
             ./modules/system/configuration.nix
             (./. + "/hosts/${hostname}/hardware-configuration.nix")
+            nvidia
             home-manager.nixosModules.home-manager
             {
               home-manager =  {
