@@ -4,7 +4,7 @@
 
     boot = {
         # initrd.availableKernelModules = [ "nvlh" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-        initrd.kernelModules = [ "nvidia" ];
+        # initrd.kernelModules = [ "nvidia" ];
         # kernelModules = [];
         # extraModulePackages = [ ];
     };
