@@ -9,7 +9,7 @@ in {
    home.packages = with pkgs; [ leftwm ];
 
     home.file.".config/leftwm" = {
-      source = ../dotfiles/.config/leftwm;
+      source = ../dotfiles/config/leftwm;
       recursive = true;
     };
   };

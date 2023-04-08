@@ -7,7 +7,7 @@ in {
   options.modules.startx = { enable = mkEnableOption "startx"; };
   config = mkIf cfg.enable {
     xsession.windowManager.command = "startx";
-    home.file.".xinitrc".source = ../dotfiles/.config/x11/xinitrc;
-    home.file.".xprofile".source = ../dotfiles/.config/x11/xprofile;
+    home.file.".xinitrc".source = ../dotfiles/config/x11/xinitrc;
+    home.file.".xprofile".source = ../dotfiles/config/x11/xprofile;
   };
 }

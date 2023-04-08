@@ -9,7 +9,7 @@ in {
     programs.nushell.enable = true;
 
     home.file.".config/nushell" = {
-      source = ../dotfiles/.config/nushell;
+      source = ../dotfiles/config/nushell;
       recursive = true;
     };
   };
