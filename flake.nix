@@ -28,6 +28,7 @@
             { networking.hostName = hostname; }
             ./modules/system/configuration.nix
             (./. + "/hosts/${hostname}/hardware-configuration.nix")
+			(./. + "/hosts/${hostname}/user.nix")
             nvidia
             home-manager.nixosModules.home-manager
             {

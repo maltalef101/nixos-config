@@ -22,6 +22,7 @@
       # package = config.boot.kernelPackages.nvidiaPackages.unstable;
       powerManagement.enable = true;
       modesetting.enable = false;
+      forceFullCompositionPipeline = true;
     };
     
     opengl.enable = true;

@@ -117,7 +117,7 @@
         (command: MoveToTag, value: "9",
             modifier: ["modkey", "Shift"],
             key: "9"),
-        (command: Execute, value: "true",
+        (command: ReturnToLastTag,
             modifier: ["modkey"],
             key: "Tab"),
         (command: Execute, value: "true",

@@ -57,6 +57,24 @@
       keyMap = "es";
   };
 
+  fonts = {
+	  fonts = with pkgs; [
+	      noto-fonts
+		  noto-fonts-cjk
+		  noto-fonts-emoji
+		  fira-code
+		  fira-code-symbols
+	  ];
+
+	  fontconfig = {
+		  defaultFonts = {
+			  serif = [ "Noto Serif" ];
+			  sansSerif =  [ "Noto Sans" ];
+			  monospace = [ "Fira Code" ];
+		  };
+	  };
+  };
+
   environment.variables = {
       # NIXOS_CONFIG = "$HOME/.config/nixos/configuration.nix";
       NIXOS_CONFIG_DIR = "$HOME/.config/nixos/";
@@ -66,6 +84,11 @@
       PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
       GTK_RC_FILES = "$HOME/.config/gtk-1.0/gtkrc";
       GTK2_RC_FILES = "$HOME/.config/gtk-2.0/gtkrc";
+      TERMINAL = "alacritty";
+      BROWSER = "firefox";
+      PAGER = "less";
+      EDITOR = "nvim";
+      VISUAL = "emacs";
   };
 
   users.users.maltalef = {
