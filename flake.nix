@@ -13,7 +13,7 @@
   outputs = { home-manager, nixpkgs, ... } @inputs: 
     let
       system = "x86_64-linux";
-      pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+      pkgs = inputs.nixpkgs.legacyPackages.${system};
       lib = nixpkgs.lib;
       config = config;
       nvidia = ./modules/system/nvidia.nix;
@@ -35,7 +35,7 @@
                 useUserPackages = true;
                 useGlobalPkgs = true;
                 extraSpecialArgs = { inherit inputs; };
-                users.maltalef = ( import (./. + "/hosts/${hostname}/user.nix") { inherit inputs lib config; });
+                users.maltalef = ( import (./. + "/hosts/${hostname}/maltalef.nix") { inherit inputs lib config; });
               };
             }
           ];

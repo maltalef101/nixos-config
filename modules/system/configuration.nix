@@ -6,7 +6,6 @@
   environment.systemPackages = with pkgs; [
     git
     bash ## fallback
-    nushell
     bat
   ];
 
@@ -20,8 +19,17 @@
           canTouchEfiVariables = true;
           efiSysMountPoint = "/boot/efi";
         };
-        timeout = 0;
+        timeout = 3;
       };
+  };
+
+  services.xserver = {
+    enable = true;
+    layout = "es";
+    displayManager.startx.enable = true;
+    xkbOptions = "caps:swapescape";
+    autoRepeatDelay = 170;
+    autoRepeatInterval = 60;
   };
 
   # Nix settings, auto cleanup and enable flakes
@@ -58,9 +66,6 @@
       PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
       GTK_RC_FILES = "$HOME/.config/gtk-1.0/gtkrc";
       GTK2_RC_FILES = "$HOME/.config/gtk-2.0/gtkrc";
-      EDITOR = "nvim";
-      VISUAL = "emacs";
-      PAGER = "bat";
   };
 
   users.users.maltalef = {

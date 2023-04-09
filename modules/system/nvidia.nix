@@ -5,11 +5,11 @@
   nixpkgs.config.allowUnfree = true;
   services.xserver.videoDrivers = ["nvidia"];
   
-  environment.variables = {
-    GBM_BACKEND = "nvidia-drm";
-    LIBVA_DRIVER_NAME = "nvidia";
-    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-  };
+#  environment.variables = {
+#    GBM_BACKEND = "nvidia-drm";
+#    LIBVA_DRIVER_NAME = "nvidia";
+#    __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+# };
   
   environment.systemPackages = with pkgs; [
     vulkan-loader
@@ -19,12 +19,13 @@
 
   hardware = {
     nvidia = {
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      # package = config.boot.kernelPackages.nvidiaPackages.unstable;
       powerManagement.enable = true;
-      modesetting.enable = true;
+      modesetting.enable = false;
     };
     
-  opengl.enable = true;
-  opengl.extraPackages = with pkgs; [nvidia-vaapi-driver];
+    opengl.enable = true;
+    opengl.extraPackages = with pkgs; [nvidia-vaapi-driver];
+    opengl.driSupport = true;
   };
 }

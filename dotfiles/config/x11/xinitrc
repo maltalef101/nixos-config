@@ -8,10 +8,17 @@
 # screen) and so they are needed there. To prevent doubling up commands, I
 # source them here with the line below.
 
-# Sets DBus environment variables on non-systemd distros.
+Sets DBus environment variables on non-systemd distros.
 if [ -z "$DBUS_SESSION_BUS_ADDRESS" ]; then
-	eval `dbus-launch --sh-syntax`
+	eval `dbus-launch --exit-with-session --sh-syntax`
 fi
+
+systemctl --user import-environment DISPLAY XAUTHORITY 
+
+if command -v dbus-update-activation-environment >/dev/null 2>&1; then
+	dbus-update-activation-environment DISPLAY XAUTHORITY
+fi
+
 
 # GnuPG agent stuff yeah yeah
 if [ -x /usr/bin/gpg-agent ]; then
@@ -24,4 +31,4 @@ else
 	. "$HOME/.xprofile"
 fi
 
-ssh-agent dwm
+ssh-agent leftwm

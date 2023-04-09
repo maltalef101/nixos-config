@@ -3,10 +3,13 @@
     imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
     boot = {
-        # initrd.availableKernelModules = [ "nvlh" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
-        # initrd.kernelModules = [ "nvidia" ];
-        # kernelModules = [];
+        initrd.availableKernelModules = [ "ehci_pci" "ahci" "xhci_pci" "usbhid" "usb_storage" "sd_mod" ];
+        initrd.kernelModules = [ "nvidia" ];
+        kernelModules = [ "kvm-intel" ];
+        kernelParams = [ "nomodeset" ];
+        blacklistedKernelModules = [ "nouveau" ];
         # extraModulePackages = [ ];
+        kernelPackages = pkgs.linuxPackages_latest;
     };
 
     # hardware.opengl.extraPackages = with pkgs; [
@@ -18,8 +21,8 @@
     };
 
     fileSystems."/boot/efi" = { 
-        device = "/dev/disk/by-label/efi";
-        fsType = "fat32";
+        device = "/dev/disk/by-label/boot";
+        fsType = "vfat";
     };
 
     swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
@@ -30,4 +33,5 @@
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
     powerManagement.cpuFreqGovernor = lib.mkDefault "performance";
+    hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }
