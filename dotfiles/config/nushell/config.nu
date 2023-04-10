@@ -649,3 +649,10 @@ let-env config = {
     }
   ]
 }
+
+alias ls = ^exa --group-directories-first
+alias ll = ls -al
+alias la = ls -a
+
+alias vim = ^nvim
+alias v = vim

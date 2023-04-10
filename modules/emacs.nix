@@ -8,6 +8,8 @@ in {
   config = mkIf cfg.enable {
 	  services.emacs.enable = true;
 
+	  programs.emacs.enable = true;
+
 	  home.file.".config/emacs" = {
 		source = ../dotfiles/config/emacs;
 		recursive = true;
