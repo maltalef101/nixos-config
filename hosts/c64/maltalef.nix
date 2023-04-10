@@ -17,7 +17,7 @@
 
     packages.enable = true;
     startx.enable = true;
-	storage.enable = true;
+	# storage.enable = true;
     xdg.enable = true;
   };
 }
