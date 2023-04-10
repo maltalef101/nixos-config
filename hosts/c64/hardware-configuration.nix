@@ -25,6 +25,11 @@
         fsType = "vfat";
     };
 
+    fileSystems."/var/lib/mount/storage" = {
+	    device = "/dev/disk/by-uuid/4c027f79-0f18-4776-9884-e6885849f2b3";
+	    fsType = "ext4";
+    };
+
     swapDevices = [ { device = "/dev/disk/by-label/swap"; } ];
 
     networking.useDHCP = lib.mkDefault true;

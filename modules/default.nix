@@ -17,6 +17,7 @@
 
     ./xdg.nix
     ./startx.nix
+	./storage.nix
     ./packages.nix
   ];
 }

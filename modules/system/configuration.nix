@@ -28,8 +28,8 @@
     layout = "es";
     displayManager.startx.enable = true;
     xkbOptions = "caps:swapescape";
-    autoRepeatDelay = 170;
-    autoRepeatInterval = 60;
+    autoRepeatDelay = 160;
+    autoRepeatInterval = 70;
   };
 
   # Nix settings, auto cleanup and enable flakes

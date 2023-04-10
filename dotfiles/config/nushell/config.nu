@@ -650,4 +650,8 @@ let-env config = {
   ]
 }
 
-use aliases
+alias ls = ^exa
+alias ll = ls -al
+alias la = ls -a
+alias vim = ^nvim
+alias v = vim

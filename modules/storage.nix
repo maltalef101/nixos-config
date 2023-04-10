@@ -9,5 +9,6 @@ in {
     home.file."00storage" = {
 	  source = /var/lib/mount/storage;
 	  recursive = true;
+	};
   };
 }
