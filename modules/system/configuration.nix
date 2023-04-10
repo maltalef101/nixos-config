@@ -7,6 +7,11 @@
     git
     bash ## fallback
     bat
+	libnotify
+	man
+	man-pages
+	man-pages-posix
+	mandoc
   ];
 
   # Boot settings: clean /tmp/, latest kernel and enable bootloader
@@ -31,6 +36,9 @@
     autoRepeatDelay = 160;
     autoRepeatInterval = 70;
   };
+
+  # set up default channel 
+  system.autoUpgrade.channel = "https://nixos.org/channels/nixos-unstable";
 
   # Nix settings, auto cleanup and enable flakes
   nix = {

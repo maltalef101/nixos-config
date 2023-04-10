@@ -7,6 +7,7 @@
     ./alacritty.nix
     ./bottom.nix
     ./dunst.nix
+	./emacs.nix
     ./firefox.nix
     ./git.nix
     ./leftwm.nix
@@ -15,9 +16,9 @@
     ./rofi.nix
     ./zellij.nix
 
-    ./xdg.nix
-    ./startx.nix
 	./storage.nix
     ./packages.nix
+    ./startx.nix
+    ./xdg.nix
   ];
 }

@@ -7,6 +7,7 @@
     alacritty.enable = true;
     bottom.enable = true;
     dunst.enable = true;
+	emacs.enable = true;
     firefox.enable = true;
     git.enable = true;
     leftwm.enable = true;
