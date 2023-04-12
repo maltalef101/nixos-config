@@ -21,7 +21,7 @@
         "6",
         "7",
         "8",
-        "9"
+        "9",
     ],
     max_window_width: None,
     layouts: [
@@ -36,12 +36,11 @@
     disable_current_tag_swap: false,
     disable_tile_drag: false,
     disable_window_snap: true,
-    focus_behaviour: click_to_focus,
+    focus_behaviour: ClickTo,
     focus_new_windows: true,
     single_window_border: true,
-    sloppy_mouse_follows_focus: true,
     keybind: [
-        (command: Execute, value: "sh -c $TERMINAL",
+        (command: Execute, value: "sh -c notify-send $TERMINAL",
             modifier: ["modkey"],
             key: "Return"),
         (command: Execute, value: "true",
@@ -146,6 +145,9 @@
             key: "r"),
         (command: SoftReload, value: "true",
             modifier: ["modkey", "Shift"],
+            key: "r"),
+        (command: HardReload, value: "true",
+            modifier: ["modkey", "Control"],
             key: "r"),
         (command: Execute, value: "true",
             modifier: ["modkey"],
