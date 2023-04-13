@@ -35,6 +35,13 @@
     xkbOptions = "caps:swapescape";
     autoRepeatDelay = 160;
     autoRepeatInterval = 70;
+	
+	libinput = {
+		mouse = {
+			accelProfile = "flat";
+			accelSpeed = "1";
+		};
+	};
   };
 
   # set up default channel 

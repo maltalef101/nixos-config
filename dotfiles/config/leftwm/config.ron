@@ -40,7 +40,7 @@
     focus_new_windows: true,
     single_window_border: true,
     keybind: [
-        (command: Execute, value: "sh -c notify-send $TERMINAL",
+        (command: Execute, value: "alacritty",
             modifier: ["modkey"],
             key: "Return"),
         (command: Execute, value: "true",
@@ -146,7 +146,7 @@
         (command: SoftReload, value: "true",
             modifier: ["modkey", "Shift"],
             key: "r"),
-        (command: HardReload, value: "true",
+        (command: HardReload,
             modifier: ["modkey", "Control"],
             key: "r"),
         (command: Execute, value: "true",
