@@ -19,6 +19,7 @@
 	./storage.nix
     ./packages.nix
     ./startx.nix
+    ./themes.nix
     ./xdg.nix
   ];
 }

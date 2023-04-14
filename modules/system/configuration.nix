@@ -131,6 +131,8 @@
       enable = true;
   };
 
+  programs.dconf.enable = true; # fix for gtk apps
+
   hardware.pulseaudio.enable = true;
   security.rtkit.enable = true;
   

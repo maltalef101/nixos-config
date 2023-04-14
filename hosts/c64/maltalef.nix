@@ -16,9 +16,10 @@
     rofi.enable = true;
     zellij.enable = true;
 
+	# storage.enable = true;
     packages.enable = true;
     startx.enable = true;
-	# storage.enable = true;
+    themes.enable = true;
     xdg.enable = true;
   };
 }
