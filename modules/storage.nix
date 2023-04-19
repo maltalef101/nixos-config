@@ -8,6 +8,6 @@ in {
   config = mkIf cfg.enable {
 	systemd.user.tmpfiles.rules = [
 	  "L %h/storage - - - - /var/lib/mount/storage"
-	]
+	];
   };
 }

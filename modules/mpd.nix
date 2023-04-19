@@ -6,15 +6,15 @@ let cfg = config.modules.mpd;
 in {
   options.modules.mpd = { enable = mkEnableOption "mpd"; };
   config = mkIf cfg.enable {
+	home.packages = with pkgs; [ mpc-cli ];
+
 	systemd.user.tmpfiles.rules = [
 	  "L %h/music - - - - /var/lib/mount/storage/00music/hifi"
-    ]
+    ];
 
     services.mpd = {
 		enable = true;
-		dbFile = "~/.local/share/mpd/database";
 		musicDirectory = "~/music";
-		dataDir = "~/.local/share/mpd";
 		extraConfig = ''
 		  auto_update "yes"
 		  restore_paused "yes"
