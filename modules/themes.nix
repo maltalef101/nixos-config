@@ -8,6 +8,7 @@ in {
   config = mkIf cfg.enable {
     home.packages = with pkgs; [
       gruvbox-dark-gtk
+	  gruvbox-dark-icons-gtk
     ];
 
     gtk = {

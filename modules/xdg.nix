@@ -5,13 +5,13 @@ let cfg = config.modules.xdg;
 
 in {
   options.modules.xdg = { enable = mkEnableOption "xdg"; };
-  config = {
+  config = mkIf cfg.enable {
     xdg.userDirs = {
       enable = true;
       documents = "$HOME/documents";
       download = "$HOME/downloads";
       videos = "$HOME/videos";
-      music = "$HOME/music";
+      # music = "$HOME/music";
       pictures = "$HOME/pictures";
       desktop = "$HOME/Desktop";
       publicShare = "$HOME/public";

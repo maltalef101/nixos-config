@@ -4,10 +4,11 @@
   home.stateVersion = "22.11";
 
   imports = [
+	./emacs.nix
+	./mpd.nix
     ./alacritty.nix
     ./bottom.nix
     ./dunst.nix
-	./emacs.nix
     ./firefox.nix
     ./git.nix
     ./leftwm.nix
