@@ -28,19 +28,35 @@
       };
   };
 
-  services.xserver = {
-    enable = true;
-    layout = "es";
-    displayManager.startx.enable = true;
-    xkbOptions = "caps:swapescape";
-    autoRepeatDelay = 160;
-    autoRepeatInterval = 70;
-	
-	libinput = {
-		mouse = {
-			accelProfile = "flat";
-			accelSpeed = "1";
-		};
+  services = {
+    xserver = {
+      enable = true;
+      layout = "es";
+      displayManager.startx.enable = true;
+      xkbOptions = "caps:swapescape";
+      autoRepeatDelay = 160;
+      autoRepeatInterval = 70;
+      
+      libinput = {
+      	mouse = {
+      		accelProfile = "flat";
+      		accelSpeed = "1";
+      	};
+      };
+    };
+
+	openssh = {
+      enable = true;
+      banner = ''
+             **** COMMODORE C64 BASIC V2 ****
+        64K RAM SYSTEM  38911 BASIC BYTES FREE
+      READY
+      '';
+
+      settings = {
+        PermitRootLogin = "no";
+        PasswordAuthentication = false;
+      };
 	};
   };
 
@@ -66,7 +82,10 @@
   # Set up locales (timezone and keyboard layout)
   time.timeZone = "America/Argentina/Buenos_Aires";
   i18n.defaultLocale = "es_AR.UTF-8";
-  i18n.extraLocaleSettings = {LC_MESSAGES = "en_US.UTF-8"; LC_TIME = "es_AR.UTF-8";};
+  i18n.extraLocaleSettings = {
+	LC_MESSAGES = "en_US.UTF-8";
+	LC_TIME = "es_AR.UTF-8";
+  };
 
   console = {
       keyMap = "es";
@@ -132,6 +151,7 @@
   };
 
   programs.dconf.enable = true; # fix for gtk apps
+  programs.ssh.enableAskPassword = false; # no graphical ssh prompt
 
   hardware.pulseaudio.enable = true;
   security.rtkit.enable = true;
