@@ -9,7 +9,6 @@ in {
     programs.tmux = {
 	  enable = true;
 
-	  keyMode = "vi";
 	  prefix = "C-Space";
 	  baseIndex = 1;
 	  clock24 = true;

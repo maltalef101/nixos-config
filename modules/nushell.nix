@@ -12,5 +12,10 @@ in {
       source = ../dotfiles/config/nushell;
       recursive = true;
     };
+
+	programs.starship = {
+	  enable = true;
+	  enableNushellIntegration = true;
+	};
   };
 }

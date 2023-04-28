@@ -1,7 +1,10 @@
 { pkgs, lib, config, ... }:
 
 with lib;
-let cfg = config.modules.packages;
+let cfg = 
+  config.modules.packages;
+  maimsel = pkgs.writeShellScriptBin "maimsel" ''${builtins.readFile ./scripts/maimsel}'';
+  maimfull = pkgs.writeShellScriptBin "maimfull" ''${builtins.readFile ./scripts/maimfull}'';
 
 in {
   options.modules.packages = { enable = mkEnableOption "packages"; };
@@ -19,6 +22,9 @@ in {
       unzip
       maim
       polybar 
+
+	  maimsel
+	  maimfull
     ];
   };
 }

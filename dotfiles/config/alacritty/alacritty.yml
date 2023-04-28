@@ -703,7 +703,6 @@ shell:
 # If the same trigger is assigned to multiple actions, all of them are executed
 # in the order they were defined in.
 key_bindings:
-  - { key: Return, mods: Control|Shift, action: SpawnNewInstance}
   - { key: K,      mods: Alt,           action: ScrollLineUp            }
   - { key: J,      mods: Alt,           action: ScrollLineDown          }
   - { key: U,      mods: Alt,       action: ScrollPageUp            }
