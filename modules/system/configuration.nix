@@ -98,6 +98,7 @@
 		  noto-fonts-emoji
 		  fira-code
 		  fira-code-symbols
+	      (nerdfonts.override { fonts = [ "FiraCode" ]; })
 	  ];
 
 	  fontconfig = {

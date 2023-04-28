@@ -15,7 +15,7 @@
     neovim.enable = true;
     nushell.enable = true;
     rofi.enable = true;
-    zellij.enable = true;
+    tmux.enable = true;
 
 	storage.enable = true;
     packages.enable = true;

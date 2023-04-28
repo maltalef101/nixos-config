@@ -15,7 +15,7 @@
     ./neovim.nix
     ./nushell.nix
     ./rofi.nix
-    ./zellij.nix
+    ./tmux.nix
 
 	./storage.nix
     ./packages.nix
