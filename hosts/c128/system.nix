@@ -1,7 +1,6 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports = [ ./nvidia.nix ];
   environment.defaultPackages = [ ];
 
   environment.systemPackages = with pkgs; [

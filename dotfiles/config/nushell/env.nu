@@ -82,3 +82,4 @@ let-env PAGER = less
 let-env EDITOR = nvim
 let-env VISUAL = emacs
 let-env BROWSER = firefox
+

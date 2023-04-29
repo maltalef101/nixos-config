@@ -543,3 +543,5 @@ alias vim = ^nvim
 alias v = vim
 
 alias dv = cd ~/dev
+
+source ~/.cache/starship/init.nu
