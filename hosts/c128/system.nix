@@ -58,6 +58,8 @@
         PasswordAuthentication = false;
       };
 	};
+
+	thermald.enable = true;
   };
 
   # set up default channel 
