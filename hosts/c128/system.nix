@@ -12,6 +12,7 @@
 	man-pages
 	man-pages-posix
 	mandoc
+	networkmanagerapplet
   ];
 
   # Boot settings: clean /tmp/, latest kernel and enable bootloader
@@ -28,6 +29,8 @@
       };
   };
 
+  networking.networkmanager.enable = true;
+
   services = {
     xserver = {
       enable = true;
@@ -36,13 +39,7 @@
       xkbOptions = "caps:swapescape";
       autoRepeatDelay = 160;
       autoRepeatInterval = 70;
-      
-      libinput = {
-      	mouse = {
-      		accelProfile = "flat";
-      		accelSpeed = "1";
-      	};
-      };
+	  libinput.enable = true;
     };
 
 	openssh = {

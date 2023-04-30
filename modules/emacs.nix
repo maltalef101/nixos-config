@@ -6,8 +6,6 @@ let cfg = config.modules.emacs;
 in {
   options.modules.emacs = { enable = mkEnableOption "emacs"; };
   config = mkIf cfg.enable {
-	  services.emacs.enable = true;
-
 	  programs.emacs.enable = true;
 
 	  home.file.".config/emacs" = {
