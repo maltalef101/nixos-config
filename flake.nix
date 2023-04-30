@@ -44,6 +44,7 @@
     in {
       nixosConfigurations = {
         c64 = mkSystem inputs.nixpkgs "x86_64-linux" "c64";
+		c128 = mkSystem inputs.nixpkgs "x86_64-linux" "c128";
     };
   };
 }
