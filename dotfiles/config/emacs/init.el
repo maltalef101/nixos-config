@@ -152,6 +152,13 @@
   :config
   (load-theme 'doom-gruvbox t))
 
+(defun memacs/org-latex-snippets ()
+  "Activate LaTeX snippets in Org mode."
+  (yas-activate-extra-mode 'latex-mode))
+
+(use-package org-mode
+	:hook (org-mode . memacs/org-latex-snippets)
+
 (use-package evil
   :init
   (setq evil-want-integration t)
@@ -366,7 +373,6 @@
   :hook (company-mode . company-box-mode))
 
 (use-package yasnippet
-  :diminish yas-minor-mode
   :config
   (yas-reload-all)
   (yas-global-mode))
