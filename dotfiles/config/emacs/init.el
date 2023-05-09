@@ -249,12 +249,6 @@
   :config
   (which-key-mode))
 
-(use-package treemacs
-  :commands (treemacs))
-
-(use-package treemacs-evil
-  :after treemacs)
-
 (use-package general
   :config
   (general-create-definer memacs/leader-keys
@@ -353,9 +347,6 @@
   )
 
 (use-package lsp-ivy
-  :after lsp)
-
-(use-package lsp-treemacs
   :after lsp)
 
 (use-package flycheck)
