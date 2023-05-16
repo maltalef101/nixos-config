@@ -6,6 +6,7 @@ let cfg = config.modules.redshift;
 in {
   options.modules.redshift = { enable = mkEnableOption "redshift"; };
   config = mkIf cfg.enable {
+	home.packages = with pkgs; [ redshift ];
 	services.redshift = {
 	  enable = true;
 	  enableVerboseLogging = true;
