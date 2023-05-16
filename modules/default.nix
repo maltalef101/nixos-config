@@ -6,6 +6,7 @@
   imports = [
 	./emacs.nix
 	./mpd.nix
+	./redshift.nix
     ./alacritty.nix
     ./bottom.nix
     ./dunst.nix

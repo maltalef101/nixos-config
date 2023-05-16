@@ -16,6 +16,7 @@
     nushell.enable = true;
     rofi.enable = true;
     tmux.enable = true;
+	redshift.enable = true;
 
 	storage.enable = true;
     packages.enable = true;
