@@ -7,6 +7,7 @@
         kernelModules = [ "kvm-intel" ];
         extraModulePackages = [ ];
         kernelPackages = pkgs.linuxPackages_latest;
+		kernelParams = [ "mem_sleep_default=deep" ];
     };
 
     fileSystems."/" = { 

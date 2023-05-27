@@ -156,8 +156,17 @@
   "Activate LaTeX snippets in Org mode."
   (yas-activate-extra-mode 'latex-mode))
 
-(use-package org-mode
-	:hook (org-mode . memacs/org-latex-snippets)
+(use-package org
+    :mode (("\\.org$" . org-mode))
+    :ensure org-plus-contrib
+	:hook (org-mode . memacs/org-latex-snippets))
+
+(use-package tex
+	:ensure nil
+	:init
+	(setq TeX-auto-save t)
+	(setq TeX-parse-self t)
+	)
 
 (use-package evil
   :init

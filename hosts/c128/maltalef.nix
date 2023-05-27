@@ -6,6 +6,7 @@
   config.modules = {
 	emacs.enable = true;
 	mpd.enable = true;
+	redshift.enable = true;
     alacritty.enable = true;
     bottom.enable = true;
     dunst.enable = true;
