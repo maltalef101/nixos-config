@@ -7,6 +7,7 @@
 	./emacs.nix
 	./mpd.nix
 	./redshift.nix
+	./unclutter.nix
     ./alacritty.nix
     ./bottom.nix
     ./dunst.nix

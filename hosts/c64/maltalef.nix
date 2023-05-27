@@ -6,6 +6,8 @@
   config.modules = {
 	emacs.enable = true;
 	mpd.enable = true;
+	redshift.enable = true;
+	unclutter.enable = true;
     alacritty.enable = true;
     bottom.enable = true;
     dunst.enable = true;
@@ -16,7 +18,6 @@
     nushell.enable = true;
     rofi.enable = true;
     tmux.enable = true;
-	redshift.enable = true;
 
 	storage.enable = true;
     packages.enable = true;
