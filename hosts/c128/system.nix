@@ -12,6 +12,9 @@
 	man-pages
 	man-pages-posix
 	mandoc
+	networkmanagerapplet
+	brightnessctl
+	pulsemixer
   ];
 
   # Boot settings: clean /tmp/, latest kernel and enable bootloader
@@ -28,21 +31,20 @@
       };
   };
 
+  networking.networkmanager.enable = true;
+
   services = {
     xserver = {
       enable = true;
+
+      videoDrivers = [ "modesetting" ];
+
       layout = "es";
       displayManager.startx.enable = true;
       xkbOptions = "caps:swapescape";
       autoRepeatDelay = 160;
       autoRepeatInterval = 70;
-      
-      libinput = {
-      	mouse = {
-      		accelProfile = "flat";
-      		accelSpeed = "1";
-      	};
-      };
+	  libinput.enable = true;
     };
 
 	openssh = {
@@ -60,6 +62,9 @@
 	};
 
 	thermald.enable = true;
+	auto-cpufreq.enable = true;
+
+	blueman.enable = true;
   };
 
   # set up default channel 
@@ -131,7 +136,7 @@
   users.users.maltalef = {
       uid = 1000;
       isNormalUser = true;
-      extraGroups = [ "input" "wheel" ];
+      extraGroups = [ "input" "wheel" "networkmanager" ];
       shell = pkgs.nushell;
   };
 
@@ -156,15 +161,18 @@
   programs.dconf.enable = true; # fix for gtk apps
   programs.ssh.enableAskPassword = false; # no graphical ssh prompt
 
-  hardware.pulseaudio.enable = true;
   security.rtkit.enable = true;
   
   hardware = {
-      bluetooth.enable = false;
+      bluetooth.enable = true;
       opengl = {
           enable = true;
           driSupport = true;
       };
+	  
+	  pulseaudio = {
+		  enable = true;
+	  };
   };
 
   # Do not touch

@@ -152,6 +152,22 @@
   :config
   (load-theme 'doom-gruvbox t))
 
+(defun memacs/org-latex-snippets ()
+  "Activate LaTeX snippets in Org mode."
+  (yas-activate-extra-mode 'latex-mode))
+
+(use-package org
+    :mode (("\\.org$" . org-mode))
+    :ensure org-plus-contrib
+	:hook (org-mode . memacs/org-latex-snippets))
+
+(use-package tex
+	:ensure nil
+	:init
+	(setq TeX-auto-save t)
+	(setq TeX-parse-self t)
+	)
+
 (use-package evil
   :init
   (setq evil-want-integration t)
@@ -248,12 +264,6 @@
   (which-key-idle-delay 0.3)
   :config
   (which-key-mode))
-
-(use-package treemacs
-  :commands (treemacs))
-
-(use-package treemacs-evil
-  :after treemacs)
 
 (use-package general
   :config
@@ -355,9 +365,6 @@
 (use-package lsp-ivy
   :after lsp)
 
-(use-package lsp-treemacs
-  :after lsp)
-
 (use-package flycheck)
 
 (use-package company
@@ -375,7 +382,6 @@
   :hook (company-mode . company-box-mode))
 
 (use-package yasnippet
-  :diminish yas-minor-mode
   :config
   (yas-reload-all)
   (yas-global-mode))
