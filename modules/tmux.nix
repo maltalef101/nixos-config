@@ -18,9 +18,9 @@ in {
 
 	  extraConfig = ''
 	  set-option -sa terminal-overrides ",xterm*:Tc"
+	  set -sg escape-time 0
 	  bind -n M-H previous-window
 	  bind -n M-L next-window
-	  unbind -t C-[
 	  '';
 	};
   };
