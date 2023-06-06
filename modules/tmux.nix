@@ -20,6 +20,7 @@ in {
 	  set-option -sa terminal-overrides ",xterm*:Tc"
 	  bind -n M-H previous-window
 	  bind -n M-L next-window
+	  unbind -t C-[
 	  '';
 	};
   };
