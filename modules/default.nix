@@ -18,6 +18,7 @@
     ./nushell.nix
     ./rofi.nix
     ./tmux.nix
+	./screenlock.nix
 
 	./storage.nix
     ./packages.nix
