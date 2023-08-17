@@ -9,6 +9,7 @@ in {
     services.screen-locker = {
       enable = true;
 
+	  xautolock.enable = false;
       lockCmd = "${pkgs.xsecurelock}/bin/xsecurelock";
       xss-lock.extraOptions = [ "--ignore-sleep" ];
     };

@@ -65,18 +65,16 @@
 
   # Nix settings, auto cleanup and enable flakes
   nix = {
-      settings.auto-optimise-store = true;
-      settings.allowed-users = [ "maltalef" ];
+	  settings = {
+		allowed-users = [ "root", "@wheel" ];
+		auto-optimise-store = true;
+		experimental-features = [ "nix-command" "flakes" "nix-repl" ];
+	  };
       gc = {
           automatic = true;
           dates = "weekly";
-          options = "--delete-older-than 7d";
+          options = "--delete-older-than 2d";
       };
-      extraOptions = ''
-          experimental-features = nix-command flakes
-          keep-outputs = true
-          keep-derivations = true
-      '';
   };
 
   # Set up locales (timezone and keyboard layout)

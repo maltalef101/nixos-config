@@ -7,7 +7,7 @@
         kernelModules = [ "kvm-intel" ];
         extraModulePackages = [ ];
         kernelPackages = pkgs.linuxPackages_latest;
-		kernelParams = [ "mem_sleep_default=deep" ];
+		kernelParams = [ ];
     };
 
     fileSystems."/" = { 
@@ -26,6 +26,6 @@
 
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
 
-    powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+    powerManagement.cpuFreqGovernor = lib.mkDefault "performance";
     hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

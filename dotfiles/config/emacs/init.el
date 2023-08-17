@@ -111,7 +111,6 @@
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
 			 ("elpa" . "http://elpa.gnu.org/packages/")
-			 ("org" . "https://orgmode.org/elpa/")
 			 ("elpy" . "https://jorgenschaefer.github.io/packages/")))
 
 (package-initialize)
@@ -127,10 +126,7 @@
   :custom
   (auto-package-update-interval 7)
   (auto-package-update-prompt-before-update t)
-  (auto-package-hide-results t)
-  :config
-  (auto-package-update-maybe)
-  (auto-package-update-at-time "09:00"))
+  (auto-package-hide-results t))
 
 (use-package diminish)
 

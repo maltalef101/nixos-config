@@ -34,7 +34,7 @@
                 useUserPackages = true;
                 useGlobalPkgs = true;
                 extraSpecialArgs = { inherit inputs; };
-                users.maltalef = ( import (./. + "/hosts/${hostname}/maltalef.nix") { inherit inputs lib config; });
+                users.maltalef = ( import (./. + "/hosts/${hostname}/maltalef.nix") { inherit inputs lib config pkgs; });
               };
             }
           ];

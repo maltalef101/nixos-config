@@ -4,17 +4,19 @@
   environment.defaultPackages = [ ];
 
   environment.systemPackages = with pkgs; [
-    git
-    bash ## fallback
-    bat
+	brightnessctl
 	libnotify
 	man
 	man-pages
 	man-pages-posix
 	mandoc
 	networkmanagerapplet
-	brightnessctl
 	pulsemixer
+	rust-analyzer
+	xsecurelock
+    bash ## fallback
+    bat
+    git
   ];
 
   # Boot settings: clean /tmp/, latest kernel and enable bootloader
@@ -37,7 +39,11 @@
     xserver = {
       enable = true;
 
-      videoDrivers = [ "modesetting" ];
+      videoDrivers = [ "intel" ];
+	  deviceSection = ''
+		Option "DRI" "3"
+		Option "TearFree" "true"
+	  '';
 
       layout = "es";
       displayManager.startx.enable = true;
@@ -64,7 +70,21 @@
 	thermald.enable = true;
 	auto-cpufreq.enable = true;
 
+	# actkbd = {
+	#   enable = true;
+	#   bindings = [
+	#    { keys = [ 233 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/brightnessctl 10%+"; }
+	#    { keys = [ 232 ]; events = [ "key" ]; command = "/run/current-system/sw/bin/brightnessctl 10%-"; }
+	#   ];
+	# };
+	
 	blueman.enable = true;
+
+	logind = {
+	  lidSwitch = "lock";
+	  lidSwitchDocked = "ignore";
+	  lidSwitchExternalPower = "ignore";
+	};
   };
 
   # set up default channel 
@@ -126,6 +146,7 @@
       PASSWORD_STORE_DIR = "$HOME/.local/share/password-store";
       GTK_RC_FILES = "$HOME/.config/gtk-1.0/gtkrc";
       GTK2_RC_FILES = "$HOME/.config/gtk-2.0/gtkrc";
+	  BARTIB_FILE = "$HOME/.local/share/bartibfile";
       TERMINAL = "alacritty";
       BROWSER = "firefox";
       PAGER = "less";
@@ -151,7 +172,7 @@
           }];
       };
 
-      protectKernelImage = true;
+      # protectKernelImage = true;
   };
 
   sound = {
@@ -160,6 +181,7 @@
 
   programs.dconf.enable = true; # fix for gtk apps
   programs.ssh.enableAskPassword = false; # no graphical ssh prompt
+
 
   security.rtkit.enable = true;
   

@@ -1,4 +1,4 @@
-{ config, lib, inputs, ... }:
+{ config, lib, inputs, pkgs, ... }:
 
 {
   imports = [ ../../modules/default.nix ];
@@ -7,6 +7,7 @@
 	emacs.enable = true;
 	mpd.enable = true;
 	redshift.enable = true;
+	unclutter.enable = true;
     alacritty.enable = true;
     bottom.enable = true;
     dunst.enable = true;
@@ -17,6 +18,7 @@
     nushell.enable = true;
     rofi.enable = true;
     tmux.enable = true;
+	screenlock.enable = true;
 
 	storage.enable = true;
     packages.enable = true;
@@ -24,4 +26,5 @@
     themes.enable = true;
     xdg.enable = true;
   };
+
 }
